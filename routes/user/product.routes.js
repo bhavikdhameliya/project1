@@ -1,9 +1,11 @@
 const express = require('express');
-const { showAllProduct, specificProduct } = require('../../controller/user/user.controller');
+const { showAllProduct, 
+       specificProduct 
+    } = require('../../controller/user/product.controller');
 const { verifyToken } = require('../../helpers/tokenverify');
-const productRoute = express.Router();
+const productRoutes = express.Router();
 
-productRoute.get('/showall-product', verifyToken , showAllProduct);
-productRoute.get('/show-product', verifyToken, specificProduct);
+productRoutes.get('/showall-product', verifyToken , showAllProduct);
+productRoutes.get('/show-product', verifyToken, specificProduct);
 
-module.exports = productRoute
+module.exports = productRoutes
