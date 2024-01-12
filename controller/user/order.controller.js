@@ -1,8 +1,6 @@
 const cart = require('../../model/cart.model');
 const orderModel = require('../../model/order.model');
 
-
-
 exports.addtoorder = async(req, res) => {
     try {
         let cartItem = await cart.find({user: req.user._id, isDelete: false}).populate('cartItem');
